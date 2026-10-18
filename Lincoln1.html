@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Jumba Lincoln</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="claude:viewport-fit-sides" content="co
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Layout: a design spec sheet. Wide hero with measurement annotations, ruled service rows, a four-step process strip, and a contact block with copyable details. */
+:root {
+  --bg: #eef1f7;
+  --surface: #ffffff;
+  --fg: #101828;
+  --muted: #4a5671;
+  --rule: #c9d0e0;
+  --accent: #2b4bf2;
+  --on-accent: #ffffff;
+  --accent-soft: #dde3ff;
+  --font-display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0d1220; --surface: #151c30; --fg: #e8ecf8; --muted: #a2adc9;
+    --rule: #2a3556; --accent: #8398ff; --on-accent: #0d1220; --accent-soft: #232d57;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0d1220; --surface: #151c30; --fg: #e8ecf8; --muted: #a2adc9;
+  --rule: #2a3556; --accent: #8398ff; --on-accent: #0d1220; --accent-soft: #232d57;
+  color-scheme: dark;
+}
+
+:root { color-scheme: light; }
+body { margin: 0; }
+* { box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+  padding-block: 0;
+}
+.wrap {
+  max-width: 1080px;
+  margin-inline: auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; margin: 0; line-height: 1.05; letter-spacing: -0.02em; }
+p { margin: 0; }
+.mono { font-family: var(--font-mono); font-size: 12.5px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); }
+
+/* top bar */
+.top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; padding-block: 22px; }
+.mark { font-family: var(--font-display); font-weight: 800; font-size: 20px; letter-spacing: -0.02em; text-decoration: none; }
+.mark span { color: var(--accent); }
+.nav { display: flex; flex-wrap: wrap; gap: 6px 22px; }
+.nav a { text-decoration: none; font-size: 15px; font-weight: 500; color: var(--muted); padding-block: 4px; }
+.nav a:hover { color: var(--fg); }
+
+/* hero */
+.hero { padding-block: 40px 56px; display: grid; gap: 40px; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); align-items: end; }
+.hero h1 { font-size: clamp(52px, 11vw, 128px); font-weight: 800; line-height: 0.92; }
+.hero h1 em { font-style: normal; color: var(--accent); }
+.role { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; margin-bottom: 22px; }
+.role .pill { font-family: var(--font-mono); font-size: 12.5px; letter-spacing: 0.04em; text-transform: uppercase; background: var(--accent); color: var(--on-accent); padding: 5px 11px; border-radius: 3px; }
+.lede { font-size: clamp(18px, 2.4vw, 22px); line-height: 1.5; max-width: 34em; margin-top: 28px; }
+.cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+.btn { display: inline-flex; align-items: center; min-height: 46px; padding: 0 22px; font: 600 16px var(--font-body); text-decoration: none; border-radius: 4px; border: 2px solid var(--fg); background: transparent; color: var(--fg); cursor: pointer; }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.btn:hover { transform: translateY(-1px); }
+
+/* spec panel: the one subject-specific detail */
+.spec { background: var(--surface); border: 1px solid var(--rule); border-radius: 6px; padding: 18px; display: grid; gap: 18px; min-width: 0; }
+.spec-row { display: grid; gap: 8px; }
+.swatches { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; }
+.sw { height: 44px; border-radius: 3px; border: 1px solid var(--rule); }
+.sw:nth-child(1) { background: var(--accent); }
+.sw:nth-child(2) { background: var(--fg); }
+.sw:nth-child(3) { background: var(--muted); }
+.sw:nth-child(4) { background: var(--accent-soft); }
+.sw:nth-child(5) { background: var(--bg); }
+.specimen { font-family: var(--font-display); font-weight: 800; font-size: 56px; line-height: 1; letter-spacing: -0.03em; }
+.specimen small { font-family: var(--font-body); font-weight: 400; font-size: 15px; letter-spacing: 0; color: var(--muted); margin-left: 8px; }
+.grid-demo { display: grid; grid-template-columns: repeat(12, 1fr); gap: 3px; height: 34px; }
+.grid-demo i { background: var(--accent-soft); border-radius: 2px; }
+.spec-foot { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+
+/* sections */
+section { padding-block: 64px; border-top: 1px solid var(--rule); }
+.sec-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 16px 40px; margin-bottom: 36px; }
+.sec-head h2 { font-size: clamp(32px, 5vw, 52px); font-weight: 700; }
+.sec-head p { color: var(--muted); max-width: 36em; align-self: end; }
+
+/* services as ruled rows */
+.services { display: grid; }
+.svc { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 12px 40px; padding-block: 28px; border-top: 1px solid var(--rule); }
+.svc:last-child { border-bottom: 1px solid var(--rule); }
+.svc h3 { font-size: 28px; font-weight: 700; }
+.svc .tag { display: block; margin-bottom: 10px; }
+.svc p { max-width: 38em; }
+.svc ul { list-style: none; padding: 0; margin: 16px 0 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.svc li { font-size: 14px; padding: 4px 11px; border: 1px solid var(--rule); border-radius: 999px; color: var(--muted); background: var(--surface); }
+
+/* process */
+.steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border-top: 2px solid var(--fg); }
+.step { padding: 22px 22px 8px 0; position: relative; }
+.step + .step { padding-left: 22px; border-left: 1px solid var(--rule); }
+.step h3 { font-size: 24px; font-weight: 700; margin: 8px 0 10px; }
+.step p { color: var(--muted); font-size: 16px; }
+
+/* contact */
+.contact { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 40px; align-items: start; }
+.contact h2 { font-size: clamp(40px, 7vw, 80px); font-weight: 800; line-height: 0.95; }
+.contact h2 em { font-style: normal; color: var(--accent); }
+.details { display: grid; gap: 14px; min-width: 0; }
+.detail { background: var(--surface); border: 1px solid var(--rule); border-radius: 6px; padding: 16px 18px; display: grid; gap: 4px; min-width: 0; }
+.detail .line { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; }
+.detail .val { font-family: var(--font-mono); font-size: 17px; font-weight: 500; overflow-wrap: anywhere; user-select: all; }
+.copy { font: 600 14px var(--font-body); min-height: 40px; padding: 0 16px; border-radius: 4px; border: 1.5px solid var(--fg); background: transparent; color: var(--fg); cursor: pointer; }
+.copy:hover { background: var(--accent-soft); }
+.links { display: flex; flex-wrap: wrap; gap: 10px 20px; margin-top: 4px; }
+.links a { font-size: 15px; font-weight: 500; color: var(--accent); }
+
+footer { border-top: 1px solid var(--rule); padding-block: 26px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 20px; }
+
+@media (max-width: 860px) {
+  .hero, .contact, .sec-head, .svc { grid-template-columns: minmax(0, 1fr); }
+  .steps { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .step:nth-child(3) { padding-left: 0; border-left: 0; }
+  .step:nth-child(n+3) { border-top: 1px solid var(--rule); margin-top: 14px; padding-top: 22px; }
+}
+@media (max-width: 520px) {
+  body { font-size: 16px; }
+  .steps { grid-template-columns: minmax(0, 1fr); }
+  .step, .step + .step { padding-left: 0; border-left: 0; }
+  .step + .step { border-top: 1px solid var(--rule); margin-top: 14px; padding-top: 22px; }
+  section { padding-block: 48px; }
+  .specimen { font-size: 44px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .btn, .copy { transition: transform .15s ease, background .15s ease; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="mark" href="#top">Jumba<span>.</span>Lincoln</a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <div class="hero">
+      <div>
+        <div class="role">
+          <span class="pill">Senior Website Designer</span>
+          <span class="mono">Web · Graphics · Software · Code</span>
+        </div>
+        <h1>Jumba <em>Lincoln</em></h1>
+        <p class="lede">I design and build websites that load fast, read clearly and work on every screen. I also make graphics, install and set up software, and write the code that connects it all.</p>
+        <div class="cta">
+          <a class="btn primary" href="#contact">Start a project</a>
+          <a class="btn" href="#services">See what I do</a>
+        </div>
+      </div>
+
+
+
+    <section id="services">
+      <div class="sec-head">
+        <h2>What I do</h2>
+        <p>Four disciplines under one roof, so your site, your brand and your tools come from the same person and fit together.</p>
+      </div>
+      <div class="services">
+        <article class="svc">
+          <div><span class="mono tag">Design + build</span><h3>Web design</h3></div>
+          <div>
+            <p>Business sites, portfolios, landing pages and online shops. Each one is planned around what your visitors need to do, then designed and built to work on phones first.</p>
+            <ul><li>Responsive layouts</li><li>UI and UX design</li><li>Landing pages</li><li>Site redesigns</li></ul>
+          </div>
+        </article>
+        <article class="svc">
+          <div><span class="mono tag">Brand + print</span><h3>Graphics design</h3></div>
+          <div>
+            <p>Logos, posters, flyers, business cards and social media graphics. Clean, consistent artwork that looks the same on a screen and on paper.</p>
+            <ul><li>Logos and identity</li><li>Posters and flyers</li><li>Business cards</li><li>Social media posts</li></ul>
+          </div>
+        </article>
+        <article class="svc">
+          <div><span class="mono tag">Setup + support</span><h3>Software installation</h3></div>
+          <div>
+            <p>Installing and configuring the programs your work depends on, on computers for individuals, offices and small businesses. Set up properly so it runs the first time.</p>
+            <ul><li>Operating systems</li><li>Office and design tools</li><li>Configuration</li><li>Troubleshooting</li></ul>
+          </div>
+        </article>
+        <article class="svc">
+          <div><span class="mono tag">Logic + function</span><h3>Programming</h3></div>
+          <div>
+            <p>Custom code for the parts a template cannot do: forms, dashboards, small tools and features that make your site or business run smoother.</p>
+            <ul><li>HTML, CSS, JavaScript</li><li>Forms and features</li><li>Small business tools</li><li>Bug fixes</li></ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="sec-head">
+        <h2>How a project runs</h2>
+        <p>The same four steps every time, so you always know what happens next.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><span class="mono">Step 1</span><h3>Brief</h3><p>We talk through your goals, your audience and what you already have.</p></div>
+        <div class="step"><span class="mono">Step 2</span><h3>Design</h3><p>You see layouts and styles before anything is built, and you give feedback.</p></div>
+        <div class="step"><span class="mono">Step 3</span><h3>Build</h3><p>The approved design becomes working pages, tested on phones and computers.</p></div>
+        <div class="step"><span class="mono">Step 4</span><h3>Launch</h3><p>Your site goes live, and I stay available for fixes and updates.</p></div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="contact">
+        <div>
+          <span class="mono">Contact</span>
+          <h2 style="margin-top:14px">Have a project? Let's <em>talk.</em></h2>
+          <p class="lede" style="margin-top:22px">Send a short note about what you need. I will reply with questions, a timeline and a price.</p>
+        </div>
+        <div class="details">
+          <div class="detail">
+            <span class="mono">Email</span>
+            <div class="line">
+              <span class="val" id="email-val">lincolnjumba256@gmail.com</span>
+              <button class="copy" type="button" id="copy-email" data-target="email-val">Copy</button>
+            </div>
+          </div>
+          <div class="detail">
+            <span class="mono">Phone</span>
+            <div class="line">
+              <span class="val" id="phone-val">0755427156</span>
+              <button class="copy" type="button" id="copy-phone" data-target="phone-val">Copy</button>
+            </div>
+          </div>
+          <div class="links">
+            <a href="mailto:lincolnjumba256@gmail.com">Write an email</a>
+            <a href="tel:+256755427156">Call</a>
+            <a href="https://wa.me/256755427156" rel="noopener">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span class="mono">Jumba Lincoln · Senior Website Designer</span>
+    <span class="mono">© 2026</span>
+  </footer>
+</div>
+
+<script>
+document.querySelectorAll('.copy').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    var el = document.getElementById(btn.dataset.target);
+    var text = el.textContent.trim();
+    var done = function () {
+      btn.textContent = 'Copied';
+      setTimeout(function () { btn.textContent = 'Copy'; }, 1600);
+    };
+    var fallback = function () {
+      var r = document.createRange();
+      r.selectNodeContents(el);
+      var s = window.getSelection();
+      s.removeAllRanges();
+      s.addRange(r);
+      btn.textContent = 'Selected';
+      setTimeout(function () { btn.textContent = 'Copy'; }, 1600);
+    };
+    try {
+      navigator.clipboard.writeText(text).then(done, fallback);
+    } catch (e) { fallback(); }
+  });
+});
+</script>
+
+</body>
+</html>
